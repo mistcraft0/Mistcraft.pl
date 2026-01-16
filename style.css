@@ -1,0 +1,229 @@
+/* Reset i Podstawy */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f1219; /* Ciemny granat pod spodem */
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* ZMIENNA KOLORYSTYCZNA - BŁĘKIT/NIEBIESKI */
+:root {
+    --primary: #00B4DB; /* Jasny błękit */
+    --accent: #0083B0;  /* Ciemniejszy niebieski */
+    --glow: rgba(0, 180, 219, 0.5);
+    --dark: #161b25;
+    --darker: #0b0d12;
+}
+
+/* Nawigacja */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(11, 13, 18, 0.95);
+    border-bottom: 2px solid var(--accent);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--primary);
+    text-shadow: 2px 2px 0px var(--accent);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-weight: 600;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover, .shop-link {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--glow);
+}
+
+/* Hero Section - Tło SkyBlockowe */
+.hero {
+    height: 100vh;
+    /* Tło z chmurami/niebem */
+    background: linear-gradient(rgba(15, 18, 25, 0.6), rgba(15, 18, 25, 0.8)), 
+                url('https://images.unsplash.com/photo-1504221507732-5246c045949b?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efekt paralaksy */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.highlight {
+    color: var(--primary);
+    text-shadow: 0 0 20px var(--glow);
+}
+
+/* Box z IP */
+.server-ip-box {
+    background: rgba(0, 180, 219, 0.1);
+    padding: 18px 40px;
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    margin: 30px 0;
+    color: #fff;
+    transition: 0.3s;
+    box-shadow: 0 0 15px var(--glow);
+}
+
+.server-ip-box:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 30px var(--primary);
+}
+
+#copy-confirmation {
+    display: none;
+    color: var(--primary);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 50px;
+    background: linear-gradient(45deg, var(--accent), var(--primary));
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(0, 180, 219, 0.4);
+    transition: transform 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 180, 219, 0.6);
+}
+
+/* Sekcja Sklepu */
+.shop-section {
+    padding: 100px 10%;
+    background: linear-gradient(180deg, #0f1219 0%, #161b25 100%);
+    text-align: center;
+}
+
+.shop-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.shop-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.shop-card {
+    background: var(--darker);
+    padding: 40px 30px;
+    border-radius: 15px;
+    width: 320px;
+    border: 1px solid #2a3140;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Wyróżniona karta (SVIP) */
+.highlight-card {
+    border: 1px solid var(--accent);
+    background: linear-gradient(160deg, var(--darker), #131a26);
+}
+
+.shop-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.price {
+    font-size: 1.1rem;
+    color: var(--primary);
+    font-weight: bold;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.buy-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid var(--primary);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    background: rgba(0, 180, 219, 0.1);
+}
+
+.buy-btn:hover {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 0 15px var(--glow);
+}
+
+/* Stopka */
+footer {
+    padding: 30px;
+    background: #0b0d12;
+    text-align: center;
+    color: #555;
+    border-top: 1px solid #1f2533;
+}
