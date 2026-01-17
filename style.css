@@ -226,4 +226,53 @@ footer {
     text-align: center;
     color: #555;
     border-top: 1px solid #1f2533;
+
+}
+/* --- NOWA SEKCJA KONTAKT --- */
+.contact-section {
+    padding: 80px 20px;
+    background-color: #0b0d12;
+    text-align: center;
+    border-top: 2px solid #1f2533;
+    margin-top: 50px;
+}
+
+.contact-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.contact-section p {
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.email-box {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 40px;
+    background: rgba(0, 180, 219, 0.1);
+    border: 2px solid var(--primary);
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.email-box:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 25px rgba(0, 180, 219, 0.5);
+    transform: scale(1.05);
+}
+
+.small-note {
+    font-size: 0.9rem !important;
+    color: #555 !important;
+    margin-top: 20px;
 }
