@@ -3,94 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MistCraft - Najlepszy SkyBlock</title>
+    <title>MistCraft - SkyBlock Server</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">MistCraft</div>
-        <ul class="nav-links">
-            <li><a href="#home">Start</a></li>
-            <li><a href="#about">O trybie</a></li>
-            <li><a href="#shop" class="shop-link">Sklep ViShop</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <span>MISTCRAFT</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Strona Główna</a></li>
+                <li><a href="https://twoj-link-do-sklepu.pl" target="_blank">Sklep</a></li>
+                <li><a href="#features">O Trybie</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Zbuduj swoją potęgę w chmurach</h1>
-            <p>Dołącz do <span class="highlight">MistCraft</span> - unikalny SkyBlock, na który czekałeś.</p>
+    <header id="home" class="hero">
+        <div class="hero-bg"></div> <div class="hero-content">
+            <div class="badge">NOWA EDYCJA SKYBLOCK</div>
+            <h1>NAJLEPSZY SERWER <br> <span class="gradient-text">MINECRAFT</span> W POLSCE</h1>
+            <p>Dołącz do tysięcy graczy. Zbuduj imperium, walcz na arenie i dominuj w rankingu.</p>
             
-            <div class="server-ip-box" onclick="copyIP()">
-                <span id="ip-text">Mistcraft.pl</span>
-                <span class="tooltip">Kliknij, aby skopiować IP!</span>
+            <div class="hero-buttons">
+                <div class="btn-primary" onclick="copyIP()">
+                    <i class="fas fa-play"></i>
+                    <span id="ip-text">MISTCRAFT.PL</span>
+                    <span class="copy-hint">KLIKNIJ ABY SKOPIOWAĆ</span>
+                </div>
+                
+                <a href="https://twoj-link-do-sklepu.pl" target="_blank" class="btn-secondary">
+                    <i class="fas fa-shopping-cart"></i> SKLEP WWW
+                </a>
             </div>
             <div id="copy-confirmation">Skopiowano adres IP!</div>
-
-            <br>
-            <a href="#shop" class="cta-button">Otwórz ItemShop</a>
         </div>
-    </section>
+    </header>
 
-    <section id="shop" class="shop-section">
-        <h2>Sklep Serwera (ViShop)</h2>
-        <p>Kup rangi, klucze i ułatwienia, aby rozwinąć swoją wyspę szybciej.</p>
-        
-        <div class="shop-container">
-            <div class="shop-card">
-                <h3>Ranga VIP</h3>
-                <p>Latanie na wyspie, kit VIP, rezerwacja slotu.</p>
-                <div class="price">Sprawdź cenę</div>
-                <a href="https://twoj-link-do-vishop.pl" target="_blank" class="buy-btn">Kup w ViShop</a>
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>DLACZEGO MY?</h2>
+                <p>Sprawdź co oferuje nasz serwer</p>
             </div>
 
-            <div class="shop-card highlight-card">
-                <h3>Ranga SVIP</h3>
-                <p>Wszystko co VIP + /napraw, wiekszy drop, efektowny chat.</p>
-                <div class="price">Polecane</div>
-                <a href="https://twoj-link-do-vishop.pl" target="_blank" class="buy-btn">Kup w ViShop</a>
-            </div>
-
-            <div class="shop-card">
-                <h3>Tokeny / Klucze</h3>
-                <p>Waluta premium i klucze do skrzyń z nagrodami.</p>
-                <div class="price">Różne pakiety</div>
-                <a href="https://twoj-link-do-vishop.pl" target="_blank" class="buy-btn">Kup w ViShop</a>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="contact-section">
-        <div class="contact-card">
-            <h2><i class="fas fa-handshake"></i> Współpraca</h2>
-            <p>Chcesz nawiązać współpracę lub potrzebujesz pomocy?</p>
-            <p>Jesteśmy dostępni pod adresem:</p>
-            
-            <a href="mailto:mistcraft0@gmail.com" class="email-btn">
-                <div class="icon-circle">
-                    <i class="fas fa-envelope"></i>
+            <div class="grid-container">
+                <div class="card">
+                    <div class="icon-box"><i class="fas fa-cube"></i></div>
+                    <h3>Unikalny SkyBlock</h3>
+                    <p>Autorskie pluginy, systemy minionów i niespotykana ekonomia, której nie znajdziesz nigdzie indziej.</p>
                 </div>
-                <span>mistcraft0@gmail.com</span>
-            </a>
-            
-            <p class="small-note">Odpowiadamy zazwyczaj w 24h</p>
+
+                <div class="card">
+                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Stabilność i Antycheat</h3>
+                    <p>Graj bez lagów i cheaterów. Nasz silnik i zabezpieczenia gwarantują płynną rozgrywkę 24/7.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box"><i class="fas fa-gem"></i></div>
+                    <h3>Drop i Eventy</h3>
+                    <p>Codzienne wydarzenia, zbalansowany drop i nagrody dla najlepszych graczy w rankingu wysp.</p>
+                </div>
+            </div>
         </div>
     </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-box">
+                <div class="contact-text">
+                    <h2>POTRZEBUJESZ POMOCY?</h2>
+                    <p>Skontaktuj się z administracją lub zgłoś propozycję współpracy.</p>
+                </div>
+                <a href="mailto:mistcraft0@gmail.com" class="btn-outline">
+                    <i class="fas fa-envelope"></i> mistcraft0@gmail.com
+                </a>
+            </div>
+        </div>
     </section>
+
     <footer>
-        <p>&copy; 2024 MistCraft.pl - SkyBlock Server.</p>
+        <div class="container footer-content">
+            <p>&copy; 2024 MistCraft.pl. Wszelkie prawa zastrzeżone.</p>
+            <p class="disclaimer">Nie jesteśmy powiązani z Mojang AB.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
