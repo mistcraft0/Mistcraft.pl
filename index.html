@@ -3,104 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MistCraft - Serwer Minecraft</title>
+    <title>MistCraft - Sieć Serwerów Minecraft</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container nav-wrapper">
-            <div class="nav-logo">
-                <img src="logo.png" alt="MistCraft">
-                <span>MISTCRAFT</span>
+            <div class="brand">
+                <img src="logo.png" alt="MistCraft Logo">
+                <span class="brand-name">MISTCRAFT</span>
             </div>
-
-            <ul class="nav-menu">
-                <li><a href="#home" class="active">Start</a></li>
-                <li><a href="#features">O trybie</a></li>
-                <li><a href="#contact">Kontakt</a></li>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Strona Główna</a></li>
+                <li><a href="#news">Aktualności</a></li>
+                <li><a href="#about">O Serwerze</a></li>
+                <li><a href="https://twoj-sklep-vishop.pl" target="_blank" class="nav-store-link">Sklep</a></li>
             </ul>
 
-            <div class="nav-socials">
-                <a href="https://twoj-sklep.pl" target="_blank" class="social-btn shop-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-                <a href="https://discord.gg/twoj-kod" target="_blank" class="social-btn dc-icon">
+            <div class="nav-actions">
+                <a href="https://discord.gg/twoj-link" target="_blank" class="discord-btn-small">
                     <i class="fab fa-discord"></i>
                 </a>
+            </div>
+            
+            <div class="burger">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
     <header id="home" class="hero">
-        <div class="hero-overlay"></div> <div class="hero-content">
-            <div class="server-status">
-                <span class="dot"></span> SERWER ONLINE
-            </div>
-            
-            <h1>NAJLEPSZY <span class="highlight">SKYBLOCK</span> W POLSCE</h1>
-            <p>Dołącz do elitarnego grona graczy. Ekonomia, PVP, Miniony.</p>
-
-            <div class="hero-actions">
+        <div class="hero-bg"></div> <div class="hero-overlay"></div> <div class="container hero-container">
+            <div class="hero-content">
+                <div class="status-pill">
+                    <span class="online-dot"></span> SERWER ONLINE
+                </div>
+                <h1>NAJLEPSZY SERWER <br> <span class="text-gradient">MINECRAFT</span></h1>
+                <p>Dołącz do elitarnej społeczności MistCraft. SkyBlock, Survival i innowacyjne systemy, których nie znajdziesz nigdzie indziej.</p>
                 
-                <div class="ip-wrapper" onclick="copyIP()">
-                    <div class="ip-content">
-                        <span class="ip-label">ADRES SERWERA</span>
-                        <span class="ip-address">MISTCRAFT.PL</span>
+                <div class="hero-btns">
+                    <div class="btn-primary" onclick="copyIP()">
+                        <div class="icon-wrap"><i class="fas fa-play"></i></div>
+                        <div class="btn-text">
+                            <span class="small">DOŁĄCZ TERAZ</span>
+                            <span class="big">MISTCRAFT.PL</span>
+                        </div>
                     </div>
-                    <div class="ip-icon">
-                        <i class="fas fa-copy"></i>
-                    </div>
-                </div>
-                <div id="copy-confirmation">Skopiowano IP!</div>
-
-                <div class="sub-buttons">
-                    <a href="https://discord.gg/twoj-kod" target="_blank" class="btn btn-discord">
-                        <i class="fab fa-discord"></i> DOŁĄCZ NA DISCORD
-                    </a>
-                    <a href="https://twoj-sklep.pl" target="_blank" class="btn btn-shop">
-                        <i class="fas fa-gem"></i> ITEMSHOP
+                    
+                    <a href="https://twoj-sklep-vishop.pl" target="_blank" class="btn-secondary">
+                        <i class="fas fa-shopping-cart"></i> SKLEP
                     </a>
                 </div>
+                <div id="copy-confirmation">Skopiowano IP serwera!</div>
             </div>
         </div>
     </header>
 
-    <section id="features" class="features-section">
+    <section id="news" class="section news-section">
         <div class="container">
+            <div class="section-header">
+                <h2>OSTATNIE <span class="text-blue">AKTUALNOŚCI</span></h2>
+                <p>Bądź na bieżąco z życiem serwera</p>
+            </div>
+
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="news1.jpg" alt="Start Edycji" onerror="this.src='https://via.placeholder.com/400x250/111/3b82f6?text=MistCraft'">
+                        <div class="news-date">12 STY</div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag">WYDARZENIE</span>
+                        <h3>Wielkie Otwarcie Nowej Edycji</h3>
+                        <p>Przygotowaliśmy dla Was zupełnie nowe wyspy, system minionów oraz zbalansowaną ekonomię...</p>
+                        <a href="#" class="read-more">Czytaj więcej <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="news2.jpg" alt="Update" onerror="this.src='https://via.placeholder.com/400x250/111/3b82f6?text=MistCraft'">
+                        <div class="news-date">10 STY</div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag update">AKTUALIZACJA</span>
+                        <h3>Nowe Skrzynie w ItemShopie</h3>
+                        <p>Dodaliśmy epickie skrzynie z unikalnymi nagrodami. Sprawdź, co możesz wylosować w ten weekend!</p>
+                        <a href="#" class="read-more">Czytaj więcej <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="news3.jpg" alt="Konkurs" onerror="this.src='https://via.placeholder.com/400x250/111/3b82f6?text=MistCraft'">
+                        <div class="news-date">08 STY</div>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-tag community">SPOŁECZNOŚĆ</span>
+                        <h3>Wyniki Konkursu Budowlanego</h3>
+                        <p>Gratulujemy zwycięzcom! Wasze konstrukcje na spawnie zapierają dech w piersiach. Odbierzcie nagrody...</p>
+                        <a href="#" class="read-more">Czytaj więcej <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="discord-banner">
+        <div class="container discord-content">
+            <div class="dc-text">
+                <i class="fab fa-discord"></i>
+                <div>
+                    <h3>DOŁĄCZ NA NASZ DISCORD</h3>
+                    <p>Rozmawiaj z 5000+ graczami, zgłaszaj błędy i bierz udział w giveawayach.</p>
+                </div>
+            </div>
+            <a href="https://discord.gg/twoj-link" target="_blank" class="dc-button">DOŁĄCZ TERAZ</a>
+        </div>
+    </section>
+
+    <section id="about" class="section features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>DLACZEGO <span class="text-blue">MISTCRAFT?</span></h2>
+            </div>
+            
             <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-cube"></i>
-                    <h3>Autorskie Systemy</h3>
-                    <p>Unikalne mechaniki, których nie znajdziesz nigdzie indziej.</p>
+                <div class="feature-box">
+                    <div class="f-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Ochrona Anty-Cheat</h4>
+                    <p>Nasz autorski system wykrywa cheaterów w ułamku sekundy.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Aktywna Społeczność</h3>
-                    <p>Tysiące graczy online i pomocna administracja 24/7.</p>
+                <div class="feature-box">
+                    <div class="f-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Zero Lagów</h4>
+                    <p>Serwery hostowane na najszybszych maszynach w Europie.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Brak Lagów</h3>
-                    <p>Najpotężniejsze maszyny gwarantują stabilną rozgrywkę.</p>
+                <div class="feature-box">
+                    <div class="f-icon"><i class="fas fa-gem"></i></div>
+                    <h4>Ekonomia</h4>
+                    <p>Zbalansowany rynek stworzony przez graczy dla graczy.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="f-icon"><i class="fas fa-headset"></i></div>
+                    <h4>Support 24/7</h4>
+                    <p>Nasza administracja jest zawsze gotowa do pomocy.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="footer-contact">
-        <div class="container">
-            <h2>POTRZEBUJESZ POMOCY?</h2>
-            <p>Napisz do nas maila lub otwórz ticket na Discordzie.</p>
-            <a href="mailto:mistcraft0@gmail.com" class="email-link">mistcraft0@gmail.com</a>
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Logo">
+                    <span>MISTCRAFT</span>
+                </div>
+                <p>Najlepszy serwer Minecraft w Polsce. Tworzymy pasję od 2024 roku.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
             
-            <div class="footer-bottom">
-                &copy; 2024 MistCraft. Wszelkie prawa zastrzeżone.
+            <div class="footer-col">
+                <h5>NAWIGACJA</h5>
+                <ul>
+                    <li><a href="#home">Strona Główna</a></li>
+                    <li><a href="#news">Aktualności</a></li>
+                    <li><a href="https://twoj-sklep.pl">Sklep WWW</a></li>
+                    <li><a href="#">Regulamin</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h5>KONTAKT</h5>
+                <ul>
+                    <li><a href="mailto:mistcraft0@gmail.com">mistcraft0@gmail.com</a></li>
+                    <li><a href="https://discord.gg/link">Discord Ticket</a></li>
+                </ul>
             </div>
         </div>
-    </section>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MistCraft. Wszelkie prawa zastrzeżone. Design inspired by pro trends.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
