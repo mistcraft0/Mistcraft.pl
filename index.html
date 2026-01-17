@@ -3,98 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MistCraft - SkyBlock Server</title>
+    <title>MistCraft - Serwer Minecraft</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="logo.png" alt="Logo">
+        <div class="container nav-wrapper">
+            <div class="nav-logo">
+                <img src="logo.png" alt="MistCraft">
                 <span>MISTCRAFT</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active">Strona Główna</a></li>
-                <li><a href="https://twoj-link-do-sklepu.pl" target="_blank">Sklep</a></li>
-                <li><a href="#features">O Trybie</a></li>
+
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Start</a></li>
+                <li><a href="#features">O trybie</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
+
+            <div class="nav-socials">
+                <a href="https://twoj-sklep.pl" target="_blank" class="social-btn shop-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+                <a href="https://discord.gg/twoj-kod" target="_blank" class="social-btn dc-icon">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
         </div>
     </nav>
 
     <header id="home" class="hero">
-        <div class="hero-bg"></div> <div class="hero-content">
-            <div class="badge">NOWA EDYCJA SKYBLOCK</div>
-            <h1>NAJLEPSZY SERWER <br> <span class="gradient-text">MINECRAFT</span> W POLSCE</h1>
-            <p>Dołącz do tysięcy graczy. Zbuduj imperium, walcz na arenie i dominuj w rankingu.</p>
-            
-            <div class="hero-buttons">
-                <div class="btn-primary" onclick="copyIP()">
-                    <i class="fas fa-play"></i>
-                    <span id="ip-text">MISTCRAFT.PL</span>
-                    <span class="copy-hint">KLIKNIJ ABY SKOPIOWAĆ</span>
-                </div>
-                
-                <a href="https://twoj-link-do-sklepu.pl" target="_blank" class="btn-secondary">
-                    <i class="fas fa-shopping-cart"></i> SKLEP WWW
-                </a>
+        <div class="hero-overlay"></div> <div class="hero-content">
+            <div class="server-status">
+                <span class="dot"></span> SERWER ONLINE
             </div>
-            <div id="copy-confirmation">Skopiowano adres IP!</div>
+            
+            <h1>NAJLEPSZY <span class="highlight">SKYBLOCK</span> W POLSCE</h1>
+            <p>Dołącz do elitarnego grona graczy. Ekonomia, PVP, Miniony.</p>
+
+            <div class="hero-actions">
+                
+                <div class="ip-wrapper" onclick="copyIP()">
+                    <div class="ip-content">
+                        <span class="ip-label">ADRES SERWERA</span>
+                        <span class="ip-address">MISTCRAFT.PL</span>
+                    </div>
+                    <div class="ip-icon">
+                        <i class="fas fa-copy"></i>
+                    </div>
+                </div>
+                <div id="copy-confirmation">Skopiowano IP!</div>
+
+                <div class="sub-buttons">
+                    <a href="https://discord.gg/twoj-kod" target="_blank" class="btn btn-discord">
+                        <i class="fab fa-discord"></i> DOŁĄCZ NA DISCORD
+                    </a>
+                    <a href="https://twoj-sklep.pl" target="_blank" class="btn btn-shop">
+                        <i class="fas fa-gem"></i> ITEMSHOP
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section id="features" class="features">
+    <section id="features" class="features-section">
         <div class="container">
-            <div class="section-title">
-                <h2>DLACZEGO MY?</h2>
-                <p>Sprawdź co oferuje nasz serwer</p>
-            </div>
-
-            <div class="grid-container">
-                <div class="card">
-                    <div class="icon-box"><i class="fas fa-cube"></i></div>
-                    <h3>Unikalny SkyBlock</h3>
-                    <p>Autorskie pluginy, systemy minionów i niespotykana ekonomia, której nie znajdziesz nigdzie indziej.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-cube"></i>
+                    <h3>Autorskie Systemy</h3>
+                    <p>Unikalne mechaniki, których nie znajdziesz nigdzie indziej.</p>
                 </div>
-
-                <div class="card">
-                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Stabilność i Antycheat</h3>
-                    <p>Graj bez lagów i cheaterów. Nasz silnik i zabezpieczenia gwarantują płynną rozgrywkę 24/7.</p>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Aktywna Społeczność</h3>
+                    <p>Tysiące graczy online i pomocna administracja 24/7.</p>
                 </div>
-
-                <div class="card">
-                    <div class="icon-box"><i class="fas fa-gem"></i></div>
-                    <h3>Drop i Eventy</h3>
-                    <p>Codzienne wydarzenia, zbalansowany drop i nagrody dla najlepszych graczy w rankingu wysp.</p>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Brak Lagów</h3>
+                    <p>Najpotężniejsze maszyny gwarantują stabilną rozgrywkę.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="contact" class="footer-contact">
         <div class="container">
-            <div class="contact-box">
-                <div class="contact-text">
-                    <h2>POTRZEBUJESZ POMOCY?</h2>
-                    <p>Skontaktuj się z administracją lub zgłoś propozycję współpracy.</p>
-                </div>
-                <a href="mailto:mistcraft0@gmail.com" class="btn-outline">
-                    <i class="fas fa-envelope"></i> mistcraft0@gmail.com
-                </a>
+            <h2>POTRZEBUJESZ POMOCY?</h2>
+            <p>Napisz do nas maila lub otwórz ticket na Discordzie.</p>
+            <a href="mailto:mistcraft0@gmail.com" class="email-link">mistcraft0@gmail.com</a>
+            
+            <div class="footer-bottom">
+                &copy; 2024 MistCraft. Wszelkie prawa zastrzeżone.
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; 2024 MistCraft.pl. Wszelkie prawa zastrzeżone.</p>
-            <p class="disclaimer">Nie jesteśmy powiązani z Mojang AB.</p>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
