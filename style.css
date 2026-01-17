@@ -1,4 +1,15 @@
-/* Reset i Podstawy */
+/* --- ZMIENNE KOLORYSTYCZNE --- */
+:root {
+    --bg-dark: #0f1115;       /* Bardzo ciemne tło (prawie czarne) */
+    --bg-card: #161920;       /* Tło kart */
+    --primary: #3b82f6;       /* Główny niebieski */
+    --primary-glow: #60a5fa;  /* Jaśniejszy niebieski do świecenia */
+    --text-main: #ffffff;
+    --text-muted: #9ca3af;    /* Szary tekst */
+    --radius: 12px;           /* Zaokrąglenie rogów */
+}
+
+/* --- RESET --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,325 +17,329 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #0f1219; /* Ciemny granat pod spodem */
-    color: #fff;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif; /* Nowoczesna czcionka */
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
 }
 
-/* ZMIENNA KOLORYSTYCZNA - BŁĘKIT/NIEBIESKI */
-:root {
-    --primary: #00B4DB; /* Jasny błękit */
-    --accent: #0083B0;  /* Ciemniejszy niebieski */
-    --glow: rgba(0, 180, 219, 0.5);
-    --dark: #161b25;
-    --darker: #0b0d12;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Nawigacja */
+/* --- NAWIGACJA --- */
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    background: rgba(15, 17, 21, 0.85); /* Przezroczyste tło */
+    backdrop-filter: blur(10px);        /* Rozmycie pod spodem (Glassmorphism) */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    background: rgba(11, 13, 18, 0.95);
-    border-bottom: 2px solid var(--accent);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
 }
 
 .logo {
-    font-family: 'Press Start 2P', cursive;
-    color: var(--primary);
-    text-shadow: 2px 2px 0px var(--accent);
-    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 1.2rem;
     letter-spacing: 1px;
+}
+
+.logo img {
+    height: 40px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-}
-
-.nav-links li {
-    margin-left: 30px;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #ccc;
-    font-weight: 600;
+    color: var(--text-muted);
+    font-weight: 500;
     transition: 0.3s;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
-.nav-links a:hover, .shop-link {
-    color: var(--primary);
-    text-shadow: 0 0 10px var(--glow);
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-main);
 }
 
-/* Hero Section - Tło SkyBlockowe */
+/* --- HERO SECTION --- */
 .hero {
-    height: 100vh;
-    /* Tło z chmurami/niebem */
-    background: linear-gradient(rgba(15, 18, 25, 0.6), rgba(15, 18, 25, 0.8)), 
-                url('https://images.unsplash.com/photo-1504221507732-5246c045949b?q=80&w=2070&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Efekt paralaksy */
+    height: 100vh; /* Cały ekran */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
     padding-top: 60px;
+}
+
+/* Tło z obrazkiem (zmień tlo.jpg na swoje) */
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('tlo.jpg') no-repeat center center/cover;
+    opacity: 0.3; /* Przyciemnienie zdjęcia */
+    z-index: -1;
+}
+
+/* Cieniowanie od dołu */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; width: 100%; height: 150px;
+    background: linear-gradient(to top, var(--bg-dark), transparent);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.badge {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--primary-glow);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 .hero h1 {
     font-size: 3.5rem;
-    margin-bottom: 15px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-.highlight {
-    color: var(--primary);
-    text-shadow: 0 0 20px var(--glow);
-}
-
-/* Box z IP */
-.server-ip-box {
-    background: rgba(0, 180, 219, 0.1);
-    padding: 18px 40px;
-    border: 2px solid var(--primary);
-    border-radius: 5px;
-    display: inline-block;
-    cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.9rem;
-    margin: 30px 0;
-    color: #fff;
-    transition: 0.3s;
-    box-shadow: 0 0 15px var(--glow);
-}
-
-.server-ip-box:hover {
-    background: var(--primary);
-    color: #000;
-    box-shadow: 0 0 30px var(--primary);
-}
-
-#copy-confirmation {
-    display: none;
-    color: var(--primary);
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 15px 50px;
-    background: linear-gradient(45deg, var(--accent), var(--primary));
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    margin-top: 10px;
-    box-shadow: 0 4px 15px rgba(0, 180, 219, 0.4);
-    transition: transform 0.2s;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 180, 219, 0.6);
-}
-
-/* Sekcja Sklepu */
-.shop-section {
-    padding: 100px 10%;
-    background: linear-gradient(180deg, #0f1219 0%, #161b25 100%);
-    text-align: center;
-}
-
-.shop-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: var(--primary);
-    text-transform: uppercase;
-}
-
-.shop-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.shop-card {
-    background: var(--darker);
-    padding: 40px 30px;
-    border-radius: 15px;
-    width: 320px;
-    border: 1px solid #2a3140;
-    transition: 0.4s;
-    position: relative;
-    overflow: hidden;
-}
-
-.shop-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-/* Wyróżniona karta (SVIP) */
-.highlight-card {
-    border: 1px solid var(--accent);
-    background: linear-gradient(160deg, var(--darker), #131a26);
-}
-
-.shop-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-.price {
-    font-size: 1.1rem;
-    color: var(--primary);
-    font-weight: bold;
-    margin: 20px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.buy-btn {
-    display: inline-block;
-    width: 100%;
-    padding: 12px;
-    border-radius: 5px;
-    border: 2px solid var(--primary);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-    background: rgba(0, 180, 219, 0.1);
-}
-
-.buy-btn:hover {
-    background: var(--primary);
-    color: #fff;
-    box-shadow: 0 0 15px var(--glow);
-}
-
-/* Stopka */
-footer {
-    padding: 30px;
-    background: #0b0d12;
-    text-align: center;
-    color: #555;
-    border-top: 1px solid #1f2533;
-
-}
-/* --- SEKCJA KONTAKT PREMIUM --- */
-.contact-section {
-    padding: 100px 20px;
-    /* Ciemny gradient w tle */
-    background: radial-gradient(circle at center, #1b222c 0%, #0b0d12 100%);
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid #1f2533;
-}
-
-/* Karta z efektem szkła */
-.contact-card {
-    background: rgba(22, 27, 37, 0.7); /* Półprzezroczyste tło */
-    backdrop-filter: blur(10px);       /* Rozmycie tła pod spodem */
-    padding: 50px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 180, 219, 0.2); /* Delikatna błękitna ramka */
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);  /* Cień pod spodem */
-    max-width: 600px;
-    width: 100%;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.contact-card:hover {
-    border-color: var(--primary); /* Po najechaniu ramka świeci */
-    box-shadow: 0 0 30px rgba(0, 180, 219, 0.15);
-}
-
-.contact-card h2 {
-    color: var(--primary);
-    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 900;
     margin-bottom: 20px;
-    text-transform: uppercase;
-    text-shadow: 0 0 15px rgba(0, 180, 219, 0.4);
 }
 
-.contact-card p {
-    color: #a0aab5;
-    margin-bottom: 10px;
+/* Gradientowy tekst (Minecraft) */
+.gradient-text {
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: var(--text-muted);
     font-size: 1.1rem;
-}
-
-/* Nowoczesny Przycisk E-mail */
-.email-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(90deg, #161b25, #1f2633);
-    padding: 15px 30px;
-    margin-top: 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    border: 1px solid #333;
-    transition: 0.4s;
-    width: fit-content;
+    margin-bottom: 40px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Kółeczko z ikoną w środku przycisku */
-.icon-circle {
+/* Przyciski w Hero */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Główny przycisk (IP) */
+.btn-primary {
     background: var(--primary);
-    color: #000;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+    color: white;
+    padding: 15px 40px;
+    border-radius: var(--radius);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.7);
+}
+
+.copy-hint {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-left: 10px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    padding-left: 10px;
+}
+
+/* Przycisk Sklepu */
+.btn-secondary {
+    background: rgba(255,255,255,0.05);
+    color: white;
+    padding: 15px 30px;
+    border-radius: var(--radius);
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.3);
+}
+
+#copy-confirmation {
+    margin-top: 15px;
+    color: #4ade80; /* Zielony */
+    font-weight: 600;
+    display: none;
+}
+
+/* --- FEATURES GRID (Kafelki) --- */
+.features {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: var(--text-muted);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Karta */
+.card {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.03);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
-    font-size: 1rem;
-    box-shadow: 0 0 10px var(--glow);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
 }
 
-.email-btn span {
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
-/* Animacja najechania na przycisk */
-.email-btn:hover {
-    transform: scale(1.05);
+.card p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* --- KONTAKT --- */
+.contact {
+    padding: 50px 0 100px;
+}
+
+.contact-box {
+    background: linear-gradient(135deg, #1a1e26, #161920);
+    padding: 60px;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-text h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.contact-text p {
+    color: var(--text-muted);
+}
+
+.btn-outline {
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    color: var(--text-main);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
     border-color: var(--primary);
-    box-shadow: 0 0 20px rgba(0, 180, 219, 0.3);
+    color: white;
 }
 
-.email-btn:hover .icon-circle {
-    background: #fff; /* Ikona zmienia się na białą */
-    transform: rotate(360deg); /* Ikona się obraca */
-    transition: 0.6s;
+/* --- STOPKA --- */
+footer {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
-.small-note {
-    font-size: 0.85rem !important;
-    opacity: 0.6;
-    margin-top: 25px;
+/* --- RWD (TELEFONY) --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .contact-box { flex-direction: column; text-align: center; }
+    .nav-links { display: none; } /* Uproszczenie dla mobile */
+    .hero-buttons { flex-direction: column; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    .logo { margin: 0 auto; }
+    .nav-container { justify-content: center; }
 }
