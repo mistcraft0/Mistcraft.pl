@@ -125,7 +125,7 @@ ul { list-style: none; }
 .hero-bg {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: url('tlo.jpg') no-repeat center center/cover;
+    background: url('tlo.jpg') no-repeat center 30%/cover;
     z-index: -2;
 }
 
@@ -439,3 +439,4 @@ footer {
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
     .brand-col { align-items: center; display: flex; flex-direction: column; }
 }
+
